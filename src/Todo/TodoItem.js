@@ -21,6 +21,7 @@ const styles = {
 
 
 function TodoItem({ todo, index, onChange }) {
+  console.log('todo', todo);
     return(
        <li style={styles.li}> 
          <span>
