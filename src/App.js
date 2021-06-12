@@ -1,16 +1,17 @@
+import React from 'react'
 import logo from './logo.svg';
 import Todolist from './Todo/TodoList';
 
 
 function App() {
 
-const [todos, setTodos] = React.useState()[
+const [todos, setTodos] = React.useState([
   
   {id: 1, completed: false, title: "Buy bread"},
-  {id: 2, completed: false, title: "Buy butter"},
+  {id: 2, completed: true, title: "Buy butter"},
   {id: 3, completed: false, title: "Buy milk"}
 
-]}  
+])
 
 
 
@@ -24,7 +25,7 @@ const [todos, setTodos] = React.useState()[
           return todo
        })
      )
- } 
+ }
 
 
   return (
