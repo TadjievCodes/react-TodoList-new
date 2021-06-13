@@ -36,7 +36,7 @@ function TodoItem({ todo, index, onChange }) {
 
     return(
        <li style={styles.li}> 
-         <span className={classes.join( ' ' )}>
+         <span className={classes.join( '' )}>
             <input type='checkbox' 
             checked={todo.completed} 
             style={styles.input} 
