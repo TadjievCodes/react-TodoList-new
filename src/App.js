@@ -1,9 +1,21 @@
 import React, {useEffect} from 'react'
-import logo from './logo.svg';
 import Todolist from './Todo/TodoList';
 import Context from './context'
-import AddTodo from './Todo/AddTodo'
 import Loader from './Loader'
+
+
+
+
+const AddTodo = React.lazy(
+  () =>
+    new Promise(resolve => {
+      setTimeout(() => {
+        resolve(import('./Todo/AddTodo'))
+      }, 3000)
+    })
+)
+
+
 
 
 function App() {
@@ -63,7 +75,11 @@ function addTodo(title) {
  <Context.Provider value={{ removeTodo }}>
     <div className="wrapper"> 
       <h1>React TodoList</h1>
+
+      <React.Suspense fallback={<Loader />}>   
         <AddTodo onCreate={addTodo} />
+      </React.Suspense>
+
 
         {loading && <Loader />}
         {todos.length ?  (
